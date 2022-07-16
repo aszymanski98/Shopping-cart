@@ -1,5 +1,5 @@
 # Shopping cart
-Simple page created during learning of TypeScript and mastering useContext. It has shopping cart synced with local storage.
+Simple page created during learning of TypeScript and mastering useContext. It has shopping cart synced with local storage. Placeholder routes were added to show that cart component renders globally.
 
 ## Table of contents
 * [Demo](#demo)
@@ -8,7 +8,7 @@ Simple page created during learning of TypeScript and mastering useContext. It h
 * [Tests](#tests)
 
 ## Demo
-Working demo of the project: https://aszymanski98.github.io/Shopping-cart/
+Working demo of the project: https://aszymanski98.github.io/Shopping-cart/store/
 
 ## Features
 * Fully responsive page created with Bootstrap and styled using Tailwind CSS
