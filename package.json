@@ -6,12 +6,12 @@
   "homepage": "https://aszymanski98.github.io/Shopping-cart",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build --base=/Shopping-cart/",
     "preview": "vite preview",
     "fix": "yarn eslint 'src/**/*.{.ts,tsx}' --fix",
     "test": "jest",
-    "predeploy": "tsc && vite build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "tsc && vite build --base=/Shopping-cart/",
+    "deploy": "gh-pages -b gh-pages -d dist"
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
