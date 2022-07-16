@@ -8,6 +8,9 @@ module.exports = {
         extend: {
             spacing: {
                 'card': '200px',
+                'nav': '64px',
+                'cart-width': '125px',
+                'cart-height': '75px',
             }
         },
     },
