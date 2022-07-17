@@ -1,5 +1,5 @@
 import {
-  createContext, ReactNode, useContext, useState,
+  createContext, ReactNode, useContext, useMemo, useState,
 } from 'react';
 import ShoppingCart from '../components/ShoppingCart';
 import useLocalStorage from '../hooks/useLocalStorage';
@@ -76,18 +76,19 @@ export function ShoppingCardProvider({ children }: ShoppingCardProviderProps) {
     setCartItems((currItems) => currItems.filter((item) => item.id !== id));
   }
 
+  const contextValue = useMemo(() => ({
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+    cartItems,
+    cartQuantity,
+    openCart,
+    closeCart,
+  }), [cartItems, isOpen]);
+
   return (
-    <ShoppingCartContext.Provider value={{
-      getItemQuantity,
-      increaseCartQuantity,
-      decreaseCartQuantity,
-      removeFromCart,
-      cartItems,
-      cartQuantity,
-      openCart,
-      closeCart,
-    }}
-    >
+    <ShoppingCartContext.Provider value={contextValue}>
       {children}
       <ShoppingCart isOpen={isOpen} />
     </ShoppingCartContext.Provider>
