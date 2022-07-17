@@ -21,7 +21,7 @@ function StoreItem({
 
   return (
     <Card className="h-full">
-      <Card.Img variant="top" src={imgUrl} className="object-cover max-h-card" />
+      <Card.Img variant="top" src={imgUrl} className="object-cover max-h-card" alt={name} />
       <Card.Body className="flex flex-col">
         <Card.Title className="flex justify-between align-baseline mb-4">
           <span className="text-2xl">{name}</span>
@@ -30,7 +30,7 @@ function StoreItem({
         <div className="mt-auto">
           {quantity === 0
             ? (
-              <Button className="w-full" onClick={() => increaseCartQuantity(id)}>+ Add to cart</Button>
+              <Button className="w-full" data-testid="addToCart" onClick={() => increaseCartQuantity(id)}>+ Add to cart</Button>
             )
             : (
               <div className="flex items-center flex-col gap-2">
@@ -46,6 +46,7 @@ function StoreItem({
                 <Button
                   variant="danger"
                   className="mt-2"
+                  data-testid="removeFromCart"
                   onClick={() => removeFromCart(id)}
                 >
                   Remove

@@ -13,7 +13,7 @@ function ShoppingCart({ isOpen }:ShoppingCartProps) {
   const { closeCart, cartItems } = useShoppingCart();
 
   return (
-    <Offcanvas show={isOpen} placement="end" onHide={closeCart}>
+    <Offcanvas show={isOpen} data-testid="cart-wrapper" placement="end" onHide={closeCart}>
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>
           Cart

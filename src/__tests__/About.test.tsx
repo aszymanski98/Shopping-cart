@@ -1,8 +1,9 @@
-import { render } from '@testing-library/react';
+import { test, expect } from '@jest/globals';
+import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import About from '../App';
+import About from '../pages/About';
 
 test('Renders about page correctly', () => {
   render(<About />, { wrapper: BrowserRouter });
-  expect(true).toBeTruthy();
+  expect(screen.getByText('About')).toBeTruthy();
 });
